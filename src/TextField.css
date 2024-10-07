@@ -1,0 +1,107 @@
+/* Ensure the body and root element take up the full height of the viewport */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Main container for the entire command UI */
+  .command-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    overflow: hidden; /* Prevent scrolling beyond the bottom */
+  }
+  
+  /* History section */
+  .command-history {
+    flex-grow: 1;
+    overflow-y: auto; /* Scrollable command history */
+    display: flex;
+    flex-direction: column-reverse; /* Start new messages from the bottom */
+    padding: 10px;
+    width: 100%;
+  }
+  
+  /* Chat history list styling */
+  .chat-history {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  
+  /* Chat item styling */
+  .chat-item {
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 15px;
+    margin: 8px 0;
+    width: fit-content;
+  }
+  
+  .user-message {
+    align-self: flex-end;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: right;
+  }
+  
+  .server-message {
+    align-self: flex-start;
+    background-color: #e6f7ff;
+    color: #333;
+    text-align: left;
+  }
+  
+  /* Icon styling for user and server */
+  .user-icon, .server-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+  
+  .user-icon {
+    margin-left: 8px;
+  }
+  
+  .server-icon {
+    margin-right: 8px;
+  }
+  
+  /* Message content styling */
+  .message-content {
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+  
+  /* Command input wrapper to anchor at the bottom */
+  .command-input-wrapper {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents collapsing of input field */
+  }
+  
+  /* Styling for the input field */
+  .command-input {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  

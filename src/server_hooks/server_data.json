@@ -1,0 +1,72 @@
+{
+    "swap 1 eth for usdc": [
+      [
+        {
+          "name": "swap",
+          "args": {
+            "inputAmount": "1",
+            "inputToken": "eth",
+            "outputToken": "usdc"
+          }
+        }
+      ]
+    ],
+    "bridge 1 usdt from base to arbitrum": [
+      [
+        {
+          "name": "bridge",
+          "args": {
+            "amount": "1",
+            "token": "usdt",
+            "sourceChainName": "base",
+            "destinationChainName": "arbitrum"
+          }
+        }
+      ]
+    ],
+    "swap 1 eth for usdc on ethereum then bridge to arbitrum": [
+      [
+        {
+          "name": "swap",
+          "args": {
+            "inputAmount": "1",
+            "inputToken": "eth",
+            "outputToken": "usdc",
+            "chainName": "ethereum"
+          }
+        },
+        {
+          "name": "bridge",
+          "args": {
+            "amount": "outputAmount",
+            "token": "usdc",
+            "sourceChainName": "ethereum",
+            "destinationChainName": "arbitrum"
+          }
+        }
+      ]
+    ],
+    "bridge 1 eth from ethereum to optimism then buy usdc": [
+      [
+        {
+          "name": "bridge",
+          "args": {
+            "amount": "1",
+            "token": "eth",
+            "sourceChainName": "ethereum",
+            "destinationChainName": "optimism"
+          }
+        },
+        {
+          "name": "swap",
+          "args": {
+            "inputAmount": "outputAmount",
+            "inputToken": "eth",
+            "outputToken": "usdc",
+            "chainName": "optimism"
+          }
+        }
+      ]
+    ]
+  }
+  

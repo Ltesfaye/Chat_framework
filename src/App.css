@@ -1,0 +1,126 @@
+/* Ensure the body, html, and root container take the full viewport height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Main app container with fixed positioning */
+.app-container {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Command history section with scrolling */
+.command-history {
+  overflow-y: auto; /* Enables vertical scrolling */
+  padding: 10px;
+  box-sizing: border-box;
+  height: calc(100vh - 60px); /* Adjust this based on the height of your input area */
+  display: flex;
+  flex-direction: column-reverse; /* New messages appear at the bottom */
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;  /* Preserve new lines and wrap text */
+}
+
+
+/* Chat history styling */
+.chat-history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Chat item styling */
+.chat-item {
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 8px 0;
+  width: fit-content;
+}
+
+/* User and server message styling */
+.user-message {
+  align-self: flex-end;
+  background-color: #f0f0f0;
+  color: #333;
+  text-align: right;
+}
+
+.server-message {
+  align-self: flex-start;
+  background-color: #e6f7ff;
+  color: #333;
+  text-align: left;
+}
+
+/* Icon styling for user and server messages */
+.user-icon, .server-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.user-icon {
+  margin-left: 8px; /* Position icon to the right of the user's message */
+}
+
+.server-icon {
+  margin-right: 8px; /* Position icon to the left of the server's message */
+}
+
+/* Message content styling */
+.message-content {
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+/* Command input wrapper anchored to the bottom with 10px padding */
+.command-input-wrapper {
+  position: absolute;
+  bottom: 10px; /* 10px padding from the bottom */
+  width: calc(100% - 20px); /* Account for left and right padding */
+  left: 10px;
+  background-color: white;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Styling for the input field */
+.command-input {
+  width: 100%;
+  max-width: 800px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.send-button {
+  width: 40px;             /* Set the width */
+  height: 40px;            /* Set the height to make it a circle */
+  border-radius: 50%;      /* Make the button round */
+  display: flex;           /* Center the icon */
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Background color of the button */
+  color: white;            /* Icon color */
+  border: none;            /* Remove default border */
+  cursor: pointer;         /* Add pointer on hover */
+}
+
+.send-button:hover {
+  background-color: #0056b3; /* Darken on hover */
+}
